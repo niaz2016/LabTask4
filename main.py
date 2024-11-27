@@ -6,17 +6,17 @@ from teacher import Teacher
 # 6. Create objects of the Student, Teacher, and Admin classes with the provided details.
 # Display the information of all three objects using their respective display methods.
 
-class Main:
+def getInput(title,type="text"):
+    title=title+': '
+    if type== "text":
+        return input(title)
+    elif type== "number":
+        return int(input(title))
+    elif type== "float":
+        return float(input(title))
 
-    
-    def getInput(title,type="text"):
-        title=title+': '
-        if (type=="text"):
-            return input(title)
-        elif (type=="number"):
-            return int(input(title))
-        elif (type=="float"):
-            return float(input(title))
+
+class Main:
 
     # Create objects
     print("Enter Student Details:")

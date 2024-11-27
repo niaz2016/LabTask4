@@ -6,7 +6,7 @@ from person import Person
 
 class Student(Person):
     def __init__(self, name, age, gender, stClass, rollNum):
-        super().__init__(name, age, gender)
+        Person.__init__(self, name, age, gender)
         self.stClass = stClass
         self.rollNum = rollNum
 

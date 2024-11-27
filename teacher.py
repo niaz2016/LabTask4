@@ -6,7 +6,7 @@ from person import Person
 
 class Teacher(Person):
     def __init__(self, name, age, gender, subject, experience):
-        super().__init__(name, age, gender)
+        Person.__init__(self, name, age, gender)
         self.subject = subject
         self.experience = experience
 
