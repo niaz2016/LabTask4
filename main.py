@@ -8,32 +8,23 @@ from teacher import Teacher
 
 class Main:
 
-    def name():
-        return input("Name: ")
-    def age():
-        return int(input("Age: "))
-    def gender():
-        return input("Gender: ")
-    def rollNum():
-        return input("Roll Number: ")
-    def askClass():
-        return input("Class: ")
-    def subject():
-        return input("Subject: ")
-    def experience(): 
-        return int(input("Experience (in years): "))
-    def sallary():
-        return float(input("Salary: "))
-    def position():
-        return input("Position: ")
+    
+    def getInput(title,type="text"):
+        title=title+': ';
+        if (type=="text"):
+            return input(title)
+        elif (type=="number"):
+            return int(input(title))
+        elif (type=="float"):
+            return float(input(title))
 
     # Create objects
     print("Enter Student Details:")
-    student = Student(name(), age(), gender(), askClass(), rollNum())
+    student = Student(getInput("Name"), getInput("Age","number"), getInput("Gender"), getInput("Class"), getInput("Roll No","number"))
     print("\nEnter Teacher Details:")
-    teacher = Teacher(name(), age(), gender(),subject(), experience())
+    teacher = Teacher(getInput("Name"), getInput("Age","number"), getInput("Gender"), getInput("Subject"), getInput("Experience","number"))
     print("\nEnter Admin Details:")
-    admin = Admin(name(), age(), gender(), experience(), sallary(), position(),  askClass(), rollNum(), subject())
+    admin = Admin(getInput("Name"), getInput("Age","number"), getInput("Gender"), getInput("Experiance","number"), getInput("Sallary","number"), getInput("Position"),  getInput("Class"), getInput("Roll No","number"), getInput("Subject"))
     
     # Display information
     print("\nStudent Information:")
