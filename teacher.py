@@ -5,8 +5,8 @@
 from person import Person
 
 class Teacher(Person):
-    def _init_(self, name, age, gender, subject, experience):
-        super()._init_(name, age, gender)
+    def __init__(self, name, age, gender, subject, experience):
+        super().__init__(name, age, gender)
         self.subject = subject
         self.experience = experience
 

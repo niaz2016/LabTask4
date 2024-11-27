@@ -6,17 +6,15 @@ from teacher import Teacher
 
 
 class Admin(Student, Teacher):
-    def _init_(self, name, age, gender, roll_number, student_class, subject, experience, salary, position):
-        Student._init_(self, name, age, gender, roll_number, student_class)
-        Teacher._init_(self, name, age, gender, subject, experience)
+    def __init__(self, name, age, gender, experience, salary, position, stClass, rollNum, subject):
+        Student(name, age, gender, stClass, rollNum)
+        Teacher(name, age, gender, subject, experience)
+        self.experience = experience
         self.salary = salary
         self.position = position
 
     def display_admin_info(self):
         self.display_info()
-        print(f"Roll Number: {self.roll_number}")
-        print(f"Class: {self.student_class}")
-        print(f"Subject: {self.subject}")
         print(f"Experience: {self.experience} years")
         print(f"Salary: ${self.salary}")
         print(f"Position: {self.position}")

@@ -1,4 +1,5 @@
 from admin import Admin
+from person import Person
 from student import Student
 from teacher import Teacher
 # Prompt the user to enter details for a student, a teacher, and an admin.
@@ -7,37 +8,33 @@ from teacher import Teacher
 
 class Main:
 
-    print("Enter Student Details:")
-    student_name = input("Name: ")
-    student_age = int(input("Age: "))
-    student_gender = input("Gender: ")
-    student_roll_number = input("Roll Number: ")
-    student_class = input("Class: ")
-
-    print("\nEnter Teacher Details:")
-    teacher_name = input("Name: ")
-    teacher_age = int(input("Age: "))
-    teacher_gender = input("Gender: ")
-    teacher_subject = input("Subject: ")
-    teacher_experience = int(input("Experience (in years): "))
-
-    print("\nEnter Admin Details:")
-    admin_name = input("Name: ")
-    admin_age = int(input("Age: "))
-    admin_gender = input("Gender: ")
-    admin_roll_number = input("Roll Number: ")
-    admin_class = input("Class: ")
-    admin_subject = input("Subject: ")
-    admin_experience = int(input("Experience (in years): "))
-    admin_salary = float(input("Salary: "))
-    admin_position = input("Position: ")
+    def name():
+        return input("Name: ")
+    def age():
+        return int(input("Age: "))
+    def gender():
+        return input("Gender: ")
+    def rollNum():
+        return input("Roll Number: ")
+    def askClass():
+        return input("Class: ")
+    def subject():
+        return input("Subject: ")
+    def experience(): 
+        return int(input("Experience (in years): "))
+    def sallary():
+        return float(input("Salary: "))
+    def position():
+        return input("Position: ")
 
     # Create objects
-
-    student = Student()
-    teacher = Teacher(teacher_name, teacher_age, teacher_gender, teacher_subject, teacher_experience)
-    admin = Admin(admin_name, admin_age, admin_gender, admin_roll_number, admin_class, admin_subject, admin_experience, admin_salary, admin_position)
-
+    print("Enter Student Details:")
+    student = Student(name(), age(), gender(), askClass(), rollNum())
+    print("\nEnter Teacher Details:")
+    teacher = Teacher(name(), age(), gender(),subject(), experience())
+    print("\nEnter Admin Details:")
+    admin = Admin(name(), age(), gender(), experience(), sallary(), position(),  askClass(), rollNum(), subject())
+    
     # Display information
     print("\nStudent Information:")
     student.display_student_info()

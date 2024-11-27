@@ -5,12 +5,12 @@ from person import Person
 
 
 class Student(Person):
-    def _init_(self, roll_number, student_class):
-        super()._init_(name, age, gender)
-        self.roll_number = roll_number
-        self.student_class = student_class
+    def __init__(self, name, age, gender, stClass, rollNum):
+        super().__init__(name, age, gender)
+        self.stClass = stClass
+        self.rollNum = rollNum
 
     def display_student_info(self):
         self.display_info()
-        print(f"Roll Number: {self.roll_number}")
-        print(f"Class: {self.student_class}")
+        print(f"Roll Number: {self.rollNum}")
+        print(f"Class: {self.stClass}")
