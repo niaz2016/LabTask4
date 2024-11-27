@@ -7,8 +7,8 @@ from teacher import Teacher
 
 class Admin(Student, Teacher):
     def __init__(self, name, age, gender, experience, salary, position, stClass, rollNum, subject):
-        Student(name, age, gender, stClass, rollNum)
-        Teacher(name, age, gender, subject, experience)
+        Student.__init__(self, name, age, gender, stClass, rollNum)
+        Teacher.__init__(self, name, age, gender, subject, experience)
         self.experience = experience
         self.salary = salary
         self.position = position

@@ -10,7 +10,7 @@ class Main:
 
     
     def getInput(title,type="text"):
-        title=title+': ';
+        title=title+': '
         if (type=="text"):
             return input(title)
         elif (type=="number"):
